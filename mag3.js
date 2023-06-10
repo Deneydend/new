@@ -176,4 +176,8 @@ document.querySelector("#tmm").value = tmStoredValue;
 document.querySelector("#isimgir").value = isimStoredValue;
 document.getElementById("ext").value = storedValue;
 
+// Main Change
+document.querySelector("#btnoption0").value = hzrStoredValue;
+document.querySelector("#btnoption1").value = grfStoredValue;
+document.querySelector("#btnoption2").value = tmStoredValue;
 
