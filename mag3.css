@@ -8,46 +8,39 @@
 body{
   background: #222;
 }
-
-img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
-	 display:none!important;
-	}
-
-/* Ä°SÄ°M BÃ–LÃœMÃœ */
+/* İSİM BÖLÜMÜ */
 .nametainer{
   display: flex;
   justify-content: center;
 }
 div.nametainer > div > h3{
-  font-size: 25px;
   background-color: rgb(2, 221, 255);
-  text-align: center;
   font-size: 20px;
   font-weight: bold;
   padding: 5px 50px;
   color: #000;
   text-align: center;
   border-radius: 8px;
+  width: 100%;
 }
+
 .grfname{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 350px;
-    text-align: center;
-    top: 40px;
-    transform: translate(-675px, 0px);
-    position: absolute;
-    background: rgb(34, 34, 34);
-    border: 2px solid #fff;
-    padding: 10px;
-    border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
+  top: 100px;
+  position: absolute;
+  background: rgb(34, 34, 34);
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 18px;
     
 }
 div.nametainer > div > input[type="text"]{
   font-size: 25px;
   text-align: center;
-  width: auto;
   margin: 0;
 }
 div.nametainer > div > button{
@@ -68,7 +61,7 @@ div.nametainer > div > button{
 #mag3fiyhes1{
   color: #fff;
   text-align: center;
-  margin-top: 20px;
+  margin: 10px 0;
   letter-spacing: 2px;
 }
 .button{
@@ -194,6 +187,29 @@ opacity: 0; */
   margin-right: 10px;
 }
 
+.ekstra{
+  text-align: center;
+  background-color: #434242;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  width: 120px;
+  height: 60px;
+}
+#ektrabic{
+  width: 70px;
+  height: 60px;
+  margin: 5px;
+  text-align: center;
+}
+.yellow{
+  background-color: #f9bd19;
+  color: #000;
+}
+
 #kacadet, #kacadet2{
   width: 120px;
   height: 60px;
@@ -256,12 +272,11 @@ opacity: 0; */
 }
 
 
-
 input{
-  width: 150px;
+  width: 190px;
   height: 40px;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   font-size: 25px;
 
@@ -325,7 +340,7 @@ button:active{
     line-height: 20px;
     margin: 20px;
     border-radius: 15px;
-    
+    text-transform: uppercase;
   }
   #ytlink{
     color: #fff;
@@ -337,3 +352,91 @@ button:active{
     transform: scale(1.2);
     
   }
+
+
+  #ytlink2{
+    color: #fff;
+    text-decoration: none;
+    transition: transform 240ms linear;
+  }
+  #ytlink2:hover{
+    color: #f9bd19;
+    transform: scale(1.2);
+    
+  }
+
+
+  /* HAMBURGER MENÜ */
+
+  #solgraypanel {
+    background: #111;
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    width: 350px;
+    z-index: 10;
+    transition: left 0.3s ease-in-out;
+    left: -350px;
+    box-shadow: 6px 1px 18px 12px #000;
+}
+
+.burgergps {
+    height: 60px;
+    background: #000000;
+    width: 60px;
+    border-radius: 18px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.burgergps:hover{
+  background: #f9bd19;
+  color: #146d79;
+}
+
+.burgergps:hover .navTrigger i{
+  background: #000;
+  color: #000;
+}
+
+
+.changepanel{
+  display: flex;
+  top: 300px;
+  position: relative;
+  margin: 0 50px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.sol4{
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.guncelle{
+  width: 87px;
+  height: 53px;
+  margin: 5px;
+}
+
+.solbtn{
+  padding: 20px;
+}
+
+
+.onaybutton{
+  display: flex;
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+}
+
+  /* HAMBURGER MENÜ */

@@ -3,62 +3,16 @@ var boy=document.getElementById("Boyu");
 var m2f=document.getElementById("m2fiyati");
 var kacadt=document.getElementById("kacadet");
 
-var dislama=document.querySelector('#Btn');
-
+var ektrabic=document.getElementById("ektrabic"); // EKSTRA BIÇAK
 
     
 // Firma Adı ve İş Adı
 var met1n=document.getElementById("Firma");
 var met2n=document.getElementById("Isi");
 
-// Büyük Harfe çevirme
-// var uppermet1 = met1n.toUpperCase();
-// var uppermet2 = met2n.toUpperCase();
-
 
 // Grafiker Adı
 var grf1adi = document.getElementById("isimgir");
-
-
-function setCookie(cname,cvalue,exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  var user = getCookie("username");
-  if (user != "") {
-    /////////////
-    var a = document.querySelector("#isimgir").value = (user);
-    /////////////
-  } else {
-     user = prompt("Lütfen Adınızı Giriniz:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
-}
-
-
-
 
 
 function hesapla()
@@ -83,20 +37,28 @@ if(!(control.checked)){
   
 };
 
+  
 
-var yazdir = (met1n.value).toUpperCase();
-var yazdir2 = (met2n.value).toUpperCase();
+var hzrloc = localStorage.getItem("hzrfiyat");
+var grfloc = localStorage.getItem("grffiyat");
+var tmmloc = localStorage.getItem("tmfiyat");
+var ismloc = localStorage.getItem("grfisim");
+var extloc = localStorage.getItem("ekstrabicak");
 
-var kulnam = (grf1adi.value).toUpperCase();
 
-var Sonuc = Number(en.value) * Number(boy.value) * Number(m2f.value) * Number(kacadt.value);
+var yazdir = (met1n.value);
+var yazdir2 = (met2n.value);
+
+var kulnam = (grf1adi.value);
+
+var Sonuc = en.value * boy.value * m2f.value * kacadt.value + (ektrabic.value * extloc);
 var yuvarla = Math.round(Sonuc);
 
 toplamfiyat.innerHTML=yuvarla.toFixed(0) + " TL";
 var idcopy = document.getElementById("heading")
 
 
-idcopy.innerHTML =yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
+idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
 
 
 
@@ -113,7 +75,8 @@ m2f.oninput=hesapla;
 kacadt.oninput=hesapla;
 met1n.oninput=hesapla;
 met2n.oninput=hesapla;
-grf1adi.oninput=hesapla;
+grf1adi.oninput = hesapla;
+ektrabic.oninput = hesapla;
 
 
 
@@ -136,11 +99,81 @@ function copyElementText(id) {
 }
 
 
-// Button ile aç kapa artema :))
-function openmag3() {
-    var element = document.getElementById("mag3tainer");
-    element.classList.toggle("silmek");
-}
+// VALUE 0'DAN BÜYÜKSE YELLOW Classı Ekler
+var input = document.getElementById("ektrabic");
+var h3 = document.getElementById("ekstra");
+input.addEventListener("change", function (){
+  if (input.value > 0) {
+    h3.classList.add("yellow");
+  }
+  
+  else { h3.classList.remove("yellow"); }
+}); 
 
 
-// document.querySelector("body > div").style.display = "none";
+
+/* HAMBURGER MENU İCON */
+
+function myFunction() {
+  var element = document.querySelector("body > div.burgergps > div");
+  element.classList.toggle("active");
+  var panel = document.getElementById("solgraypanel");
+  if (element.classList.contains("active")) {
+    panel.style.left = "0px";
+  } else {
+    panel.style.left = "-350px";
+  }
+};
+
+// MENÜ KAPATMA
+
+
+
+/* HAMBURGER MENU İCON */
+
+// İSİM LOCAL STORAGE KAYDETME
+
+
+// BUTONA BASTIĞINDA LOCAL STORAGE KAYDEDER
+// butonu seç
+var submitButton = document.getElementById("submit");
+// butona tıklama olayı ekle
+submitButton.addEventListener("click", function(e) {
+  // inputun değerini al
+
+  var hzrValue = document.querySelector("#hzr").value;
+  var grfValue = document.querySelector("#grf").value;
+  var tmValue = document.querySelector("#tmm").value;
+  var isimValue = document.querySelector("#isimgir").value;
+  var extValue = document.getElementById("ext").value;
+  
+  // yerel depolamaya "ekstrabicak" anahtarıyla kaydet
+
+  localStorage.setItem("hzrfiyat", hzrValue);
+  localStorage.setItem("grffiyat", grfValue);
+  localStorage.setItem("tmfiyat", tmValue);
+  localStorage.setItem("grfisim", isimValue);
+  localStorage.setItem("ekstrabicak", extValue);
+
+  // sayfayı yenile
+  location.reload();
+});
+
+// EKSTRA BIÇAK DEĞERİ SOL PANEL VALUE İÇİNE YAZDIR
+// yerel depolamadan "ekstrabicak" değerini al
+
+var hzrStoredValue = localStorage.getItem("hzrfiyat");
+var grfStoredValue = localStorage.getItem("grffiyat");
+var tmStoredValue = localStorage.getItem("tmfiyat");
+var isimStoredValue = localStorage.getItem("grfisim");
+var storedValue = localStorage.getItem("ekstrabicak");
+
+// inputun value değerine yerel depolamadan gelen değeri atayın
+
+document.querySelector("#hzr").value = hzrStoredValue;
+document.querySelector("#grf").value = grfStoredValue;
+document.querySelector("#tmm").value = tmStoredValue;
+document.querySelector("#isimgir").value = isimStoredValue;
+document.getElementById("ext").value = storedValue;
+
+
