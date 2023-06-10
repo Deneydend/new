@@ -390,6 +390,7 @@ button:active{
     left: 20px;
     z-index: 99;
     cursor: pointer;
+    user-select: none;
 }
 
 .burgergps:hover{
