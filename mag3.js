@@ -44,6 +44,19 @@ var grfloc = localStorage.getItem("grffiyat");
 var tmmloc = localStorage.getItem("tmfiyat");
 var ismloc = localStorage.getItem("grfisim");
 var extloc = localStorage.getItem("ekstrabicak");
+  
+  
+
+// VALUE 0'DAN BÜYÜKSE YELLOW Classı Ekler • EKSTRA BIÇAK
+var input = document.getElementById("ektrabic");
+if (input.value > 0) {
+    var ekstrabicyazi = "EKSTRA_"+(input.value)+"_BIÇAK_"
+  }
+else {
+    var ekstrabicyazi = ""
+  }; 
+
+
 
 
 var yazdir = (met1n.value);
@@ -58,7 +71,8 @@ toplamfiyat.innerHTML=yuvarla.toFixed(0) + " TL";
 var idcopy = document.getElementById("heading")
 
 
-idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
+idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
+
 
 
 
