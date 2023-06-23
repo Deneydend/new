@@ -1,3 +1,10 @@
+<!--onclick link
+https://chat.openai.com/share/0188e043-e52b-4570-8daa-91485789218d
+https://chat.openai.com/share/a32ee55c-bcae-4ebe-bf2e-de68e24e3041
+
+-->
+
+
 <html lang="tr">
     <head>
         <meta charset="UTF-8">
@@ -17,7 +24,7 @@
 
    
     </head>
-    <body>
+    <body onload="writeNewBicak()">
         
         
     
@@ -37,21 +44,21 @@
 
 
         <div id="anadiv">
-          <input class="btn inputyellow" type="radio" value="11" name="btndeg" id="btnoption0" oninput="hesapla()">
+          <input class="btn inputyellow" type="radio" name="btndeg" id="btnoption0" oninput="hesapla()">
           <label class="btn labelyellow" for="btnoption0">HZR</label>
           
-          <input class="btn inputyellow" type="radio" value="12" name="btndeg" id="btnoption1" oninput="hesapla()">
+          <input class="btn inputyellow" type="radio" name="btndeg" id="btnoption1" oninput="hesapla()">
           <label class="btn labelyellow" for="btnoption1">GRF</label>
           
-          <input class="btn inputyellow" type="radio" value="15" name="btndeg" id="btnoption2" oninput="hesapla()">
+          <input class="btn inputyellow" type="radio" name="btndeg" id="btnoption2" oninput="hesapla()">
           <label class="btn labelyellow" for="btnoption2">TM</label>
           
-          <input class="btn inputyellow" checked="checked" type="radio" value="0" name="btndeg" id="btnoption3" oninput="hesapla()">
+          <input class="btn inputyellow" checked="checked" type="radio" name="btndeg" id="btnoption3" oninput="hesapla()">
           <label class="btn labelyellow" for="btnoption3">ÖZEL</label>
 
 
 
-          <input type="number"step=".1" id="m2fiyati" value="16.5" min="1" placeholder="M² Fiyatı Girin">
+          <input type="number"step=".1" id="m2fiyati" value="15" min="1" placeholder="M² Fiyatı Girin">
             
             <h3 id="ekstra" class="ekstra">EKSTRA BIÇAK ADEDİ<span class="ekstrabicfiyat"></span></h3>
             <input type="number" id="ektrabic" placeholder="Kaç Adet" value="0" min="0"> 
@@ -120,7 +127,7 @@
     <!-- HAMBURGER MENU İCON -->
 
     <!-- SOL PANEL -->
-    <div id="solgraypanel">
+    <div id="solgraypanel" style="left: 0px;">
 
         <div class="nametainer">
             <div class="grfname">
@@ -134,15 +141,40 @@
         <div class="changepanel">
         
             <label class="btn labelyellow solbtn sol1" for="btnoption0">HZR</label>
-            <input type="number" step=".1" id="hzr" class="hzr guncelle" value="0" min="1" placeholder="Fiyatı Güncelle">
+            <input type="number" step=".1" id="hzr" class="hzr guncelle" min="1" placeholder="Fiyatı Girin">
             <label class="btn labelyellow solbtn sol2" for="btnoption1">GRF</label>
-            <input type="number" step=".1" id="grf" class="grf guncelle" value="0" min="1" placeholder="Fiyatı Güncelle">
+            <input type="number" step=".1" id="grf" class="grf guncelle" min="1" placeholder="Fiyatı Girin">
             <label class="btn labelyellow solbtn sol3" for="btnoption2">TM</label>
-            <input type="number" step=".1" id="tmm" class="tm guncelle" value="0" min="1" placeholder="Fiyatı Güncelle">
+            <input type="number" step=".1" id="tmm" class="tm guncelle" min="1" placeholder="Fiyatı Girin">
             <label class="btn labelyellow solbtn sol4" for="btnoption4">EKSTRA BIÇAK</label>
-            <input type="number" step=".1" id="ext" class="ext guncelle" value="0" min="1" placeholder="Fiyatı Güncelle">
+            <input type="number" step=".1" id="ext" class="ext guncelle" min="1" placeholder="Fiyatı Girin">
             
-        </div>  
+        </div>
+      
+      
+      
+        <div class="servertainer">
+  <div class="sunucuname">
+    <p class="sncname">BİLGİLERİ SUNUCUDAN AL</p>
+      <div class="toggle-radio">
+            <input type="radio" name="rdo" id="yes" onclick="hesapla()">
+            <label id="sol1" class="btn labelyellow solbtn" for="yes">EVET</label>
+            <input type="radio" name="rdo" id="no" onclick="hesapla()">
+            <label id="sol2" class="btn labelyellow solbtn" for="no">HAYIR</label>
+
+          <div class="switch"><span></span></div>
+
+      </div><!-- toggle-radio-->  
+    <div class="label">
+<!-- <label class="btn labelyellow solbtn sol1" for="yes">EVET</label>
+     <label class="btn labelyellow solbtn sol2" for="no">HAYIR</label> -->
+    </div>
+  </div><!-- sunucuname-->      
+</div><!-- servertainer-->     
+      
+    
+      
+      
 
         <div class="onaybutton">
             <button id="submit">Bilgileri Güncelle</button>
