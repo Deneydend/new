@@ -412,41 +412,15 @@ function selectOption(radio) {
 
 
 
-// var yes = document.getElementById("yes");
-// var no = document.getElementById("no");
+var yes = document.getElementById("yes");
+var no = document.getElementById("no");
 
-// yes.addEventListener("change", function() {
-//   selectOption(this);
-//   hesapla();
-// });
+yes.addEventListener("change", function() {
+  selectOption(this);
+  hesapla();
+});
 
-// no.addEventListener("change", function() {
-//   selectOption(this);
-//   hesapla();
-// });
-
-
-    function writeNewBicak() {
-      var yes = document.getElementById("yes");
-      var no = document.getElementById("no");
-      var newbicak = 0;
-      if (yes.checked) {
-        newbicak = 100;
-      } else if (no.checked) {
-        newbicak = 200;
-      }
-      document.querySelector("#ekstra > span").innerHTML = " " + newbicak + " TL";
-    }
-
-    var yes = document.getElementById("yes");
-    var no = document.getElementById("no");
-
-    yes.addEventListener("change", function() {
-      selectOption(this);
-      writeNewBicak();
-    });
-
-    no.addEventListener("change", function() {
-      selectOption(this);
-      writeNewBicak();
-    });
+no.addEventListener("change", function() {
+  selectOption(this);
+  hesapla();
+});
