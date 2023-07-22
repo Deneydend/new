@@ -137,7 +137,7 @@ idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" 
 
 // ✅ KDV HESAPLAMA
 var kdv = document.getElementById("kdv")
-var kdvf = ((yuvarla * 18) / 100 + yuvarla);
+var kdvf = ((yuvarla * 20) / 100 + yuvarla);
 kdv.innerHTML = "KDV Dahil Tutar: " + kdvf.toFixed(2) + " TL";
 
 }
