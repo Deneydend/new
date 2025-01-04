@@ -10,7 +10,7 @@ var ektrabic = document.getElementById("ektrabic"); // EKSTRA BIÇAK
 let SncHzr = 20;
 let SncGrf = 21;
 let SncTm = 33;
-let SncExt = 35;
+let SncExt = 60;
 
 
 // Otomatik Olarak Kayıt Yoksa EVET SEÇ
