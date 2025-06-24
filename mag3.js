@@ -130,8 +130,17 @@ toplamfiyat.innerHTML=yuvarla.toFixed(0) + " TL";
 var idcopy = document.getElementById("heading")
 
 
-idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
+// idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL";
 
+
+var secim = "";
+if (document.getElementById("btnoption1").checked) {
+    secim = "_(G)";
+} else if (document.getElementById("btnoption2").checked) {
+    secim = "_(P)";
+}
+
+idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL" + secim;
 
 
 
