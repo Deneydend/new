@@ -140,7 +140,9 @@ if (document.getElementById("btnoption1").checked) {
     secim = "_(P)";
 }
 
-idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL" + secim;
+// idcopy.innerHTML = yazdir+"_1_MAG3_"+en.value+"X"+boy.value+" "+"EBAT TOPLAM"+" "+kacadt.value+".000 ADET_"+ekstrabicyazi+kulnam+"_"+yazdir2+"_"+yuvarla+"TL" + secim;
+idcopy.innerHTML = yazdir + "_" + kacadt.value + "_MAG3_" + en.value + "X" + boy.value + " EBAT TOPLAM " + kacadt.value + ".000 ADET_" + ekstrabicyazi + kulnam + "_" + yazdir2 + "_" + yuvarla + "TL" + secim;
+
 
 
 
@@ -433,3 +435,4 @@ no.addEventListener("change", function() {
   selectOption(this);
   hesapla();
 });
+
