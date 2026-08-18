@@ -7,9 +7,9 @@ var ektrabic = document.getElementById("ektrabic"); // EKSTRA BIÇAK
 
 
 // SUNUCU VERİLERİ 
-let SncHzr = 23;
-let SncGrf = 24;
-let SncTm = 37;
+let SncHzr = 24;
+let SncGrf = 25;
+let SncTm = 39;
 let SncExt = 70;
 
 
